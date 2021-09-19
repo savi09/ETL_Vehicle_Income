@@ -13,9 +13,18 @@ Count_Vehicles VARCHAR(50)
 CREATE TABLE Zip_Avg_Income (
 ID SERIAL PRIMARY KEY,
 State TEXT,
-zip_Code INT,
+Zip_Code INT,
 Total_Pop INT,
 Total_Income INT,
 Country TEXT,
 Avg_Income INT
+);
+
+CREATE TABLE Zip_Avg_Income (
+ID SERIAL PRIMARY KEY,
+Zip_Code INT,
+Count_Vehicles VARCHAR(50),
+Avg_Income INT,
+Total_Pop INT,
+Total_Income INT
 );
