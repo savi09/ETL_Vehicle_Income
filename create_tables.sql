@@ -18,7 +18,6 @@ State TEXT,
 Zip_Code INT,
 Total_Pop INT,
 Total_Income INT,
-Country TEXT,
 Avg_Income INT
 );
 
