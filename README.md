@@ -26,8 +26,10 @@ My two original data sources were:
 The final database, vehicle_income_zip, includes three table: zip_vehicle_info, zip_avg_income, and zip_vehicle_income. The table, zip_vehicle_info includes all data from the original file, [zip_vehicle_info](https://github.com/savi09/ETL_Vehicle_Income/blob/main/Resources/zip_vehicle_info.csv), except for the following changes:
   * Bad zip codes (OOS & Other) were dropped
   * Added a year column for the year the data sourced from
+
 The table, zip_avg_income includes all California data from the original file, [zip_income_info](https://github.com/savi09/ETL_Vehicle_Income/blob/main/Resources/zip_income_info.csv), except for the following changes:
   * Bad zip codes (0) were dropped
   * Country Column was dropped
   * Added a year column for the year the data sourced from
- The table, zip_vehicle_income includes the state, zip code, total population, total income, average income, the year the data is sourced from and the number of newer vehicles (less than 5 years old) in that zip code. I chose to keep most of the original data sources, because they contain useful data that we might want to use in the future. I created the merged table so that the data transformation for merging is automated. No need to go through the cleaning process again if you can just run all the cells in the Jupyter Notebook.
+
+The table, zip_vehicle_income includes the state, zip code, total population, total income, average income, the year the data is sourced from and the number of newer vehicles (less than 5 years old) in that zip code. I chose to keep most of the original data sources, because they contain useful data that we might want to use in the future. I created the merged table so that the data transformation for merging is automated. No need to go through the cleaning process again if you can just run all the cells in the Jupyter Notebook.
