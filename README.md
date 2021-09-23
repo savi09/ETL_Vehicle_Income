@@ -19,22 +19,28 @@ My two original data sources were:
 
 #### 2. Transform: what data cleaning or transformation was required.
   
-  Inital Clean up:
+Pandas was used for clean-up.
+  
+  Inital clean up:
     
-    Began by cleaning zip_income_info table. I dropped all records that were not from California, dropped records with 
-    zip codes that had a value of 0, dropped the "Country" column, and added a column for the year the data sourced. In 
-    this case the year was 2018. The columns were renamed/formatted to match the tables in the database. The columns 
-    total_income, avg_income, and total_pop were formatted to include commas and "$" where appropriate. When I tried to 
-    load the data to the database, I realized formatting was going to be an issue with my data type so I reverted to the 
-    original format.
+    Began by cleaning zip_income_info table. This table was named income_info_df in the Jupyter Notebook. I dropped all 
+    records that were not from California, dropped records with zip codes that had a value of 0, dropped the "Country" 
+    column, and added a column for the year the data sourced. In this case the year was 2018. The columns were renamed/
+    formatted to match the tables in the database. The columns total_income, avg_income, and total_pop were formatted to 
+    include commas and "$" where appropriate. When I tried to load the data to the database, I realized formatting was 
+    going to be an issue with my data type so I reverted to the original format.
     
-    Only minor changes were made to zip_vehicle_info for the inital clean-up. I dropped records with zip codes that had 
-    a value of "OOS" and "Other", added a column for the year the data sourced, and the columns were renamed/formatted 
-    to match the tables in the database.
+    Only minor changes were made to zip_vehicle_info for the inital clean-up. This table was named vehicle_info_df in the 
+    Jupyter Notebook. I dropped records with zip codes that had a value of "OOS" and "Other", added a column for the year 
+    the data sourced, and the columns were renamed/formatted to match the tables in the database.
+    
+  Table merge clean up:
+  
+    The table vehicle_info_df was renamed zip_vehicle_info to keep the intial clean-up intact. Then all records with the model year "<2006" were dropped. The model year column was changed from an object data type to an integer. Next all records that had a model year greater 5 years old were dropped, because I was only interest in newer cars. 
   
 #### 3. Load: the final database, tables/collections, and why this was chosen.
 
-The final database, vehicle_income_zip, includes three table: zip_vehicle_info, zip_avg_income, and zip_vehicle_income. The table, zip_vehicle_info includes all data from the original file, [zip_vehicle_info](https://github.com/savi09/ETL_Vehicle_Income/blob/main/Resources/zip_vehicle_info.csv), except for the following changes:
+SQLAlchemy was used to connect the Jupyter Notebook to pgAdmin and to load the data. The final database, vehicle_income_zip, includes three table: zip_vehicle_info, zip_avg_income, and zip_vehicle_income. The table, zip_vehicle_info includes all data from the original file, [zip_vehicle_info](https://github.com/savi09/ETL_Vehicle_Income/blob/main/Resources/zip_vehicle_info.csv), except for the following changes:
   * Bad zip codes (OOS & Other) were dropped
   * Added a year column for the year the data sourced from
 
@@ -43,4 +49,4 @@ The table, zip_avg_income includes all California data from the original file, [
   * Country Column was dropped
   * Added a year column for the year the data sourced from
 
-The table, zip_vehicle_income includes the state, zip code, total population, total income, average income, the year the data is sourced from and the number of newer vehicles (less than 5 years old) in that zip code. I chose to keep most of the original data sources, because they contain useful data that we might want to use in the future. I created the merged table so that the data transformation for merging is automated. No need to go through the cleaning process again if you can just run all the cells in the Jupyter Notebook.
+The table, zip_vehicle_income includes the state, zip code, total population, total income, average income, the year the data is sourced from and the number of newer vehicles (less than or equal to 5 years old) in that zip code. I chose to keep most of the original data sources, because they contain useful data that we might want to use in the future. I created the merged table so that the data transformation for merging is automated. No need to go through the cleaning process again if you can just run all the cells in the Jupyter Notebook.
