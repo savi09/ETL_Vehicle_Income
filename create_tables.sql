@@ -10,7 +10,7 @@ Duty TEXT,
 Count_Vehicles VARCHAR(50)
 );
 
-CREATE TABLE Zip_Avg_Income (
+CREATE TABLE Zip_Avg_Info (
 ID SERIAL PRIMARY KEY,
 State TEXT,
 Zip_Code INT,
