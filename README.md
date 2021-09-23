@@ -21,8 +21,16 @@ My two original data sources were:
   
   Inital Clean up:
     
-    Began by cleaning zip_income_info table. I dropped all records that were not from California, dropped records with zip codes that had a value of 0, dropped the "Country" column, and added a column for the year the data sourced. In this case the year was 2018. The columns were renamed/formatted to match the tables in the database. The columns total_income, avg_income, and total_pop were formatted to include commas and "$" where appropriate. When I tried to load the data to the database, I realized formatting was going to be an issue with my data type so I reverted to the original format.
-    Only minor changes were made to zip_vehicle_info for the inital clean-up. I dropped records with zip codes that had a value of "OOS" and "Other", added a column for the year the data sourced, and the columns were renamed/formatted to match the tables in the database.
+    Began by cleaning zip_income_info table. I dropped all records that were not from California, dropped records with 
+    zip codes that had a value of 0, dropped the "Country" column, and added a column for the year the data sourced. In 
+    this case the year was 2018. The columns were renamed/formatted to match the tables in the database. The columns 
+    total_income, avg_income, and total_pop were formatted to include commas and "$" where appropriate. When I tried to 
+    load the data to the database, I realized formatting was going to be an issue with my data type so I reverted to the 
+    original format.
+    
+    Only minor changes were made to zip_vehicle_info for the inital clean-up. I dropped records with zip codes that had 
+    a value of "OOS" and "Other", added a column for the year the data sourced, and the columns were renamed/formatted 
+    to match the tables in the database.
   
 #### 3. Load: the final database, tables/collections, and why this was chosen.
 
