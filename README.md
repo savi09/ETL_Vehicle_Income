@@ -8,11 +8,13 @@ My two original data sources were:
  * [zip_income_info](https://github.com/savi09/ETL_Vehicle_Income/blob/main/Resources/zip_income_info.csv)
   
     * This source is a CSV file.
+    * It includes the total populatio, total income, average income, and country by Zip Code for 50 states for 2018.
     * It came from [kaggle.com](https://www.kaggle.com/hamishgunasekara/average-income-per-zip-code-usa-2018)
 
  * [zip_vehicle_info](https://github.com/savi09/ETL_Vehicle_Income/blob/main/Resources/zip_vehicle_info.csv)
 
     * This source is, also, a CSV file.
+    * It includes the date this information was captured, vehicle model year, vehicle fuel type, vehicle make, light/heavy duty vehicle, and the number of vehicles in this category by Zip Code for 2018.
     * It came from [California Open Data Portal](https://data.ca.gov/dataset/vehicle-fuel-type-count-by-zip-code/resource/d304108a-06c1-462f-a144-981dd0109900)
 
 #### 2. Transform: what data cleaning or transformation was required.
